@@ -1,0 +1,88 @@
+Make Folder Inside a Folder 
+
+mkdir haystack/file{1..50}
+
+find a file and move to destination
+--------------------------------------------
+find / -type f -name "needle.txt" ok exec mv {} ~/Desktop \;
+find / -type f -name "needle.txt" ok exec mv what_to_copy where_to_copy \;
+
+find all files with PERMISSION SUID
+------------------------------------------
+find / -perm -4000
+
+max depth
+-------------
+find . -maxdepth 1
+
+find type
+----------
+find . -type f[files] d[directory]
+
+find by name/
+------------------
+find . -maxdepth 2 -name "turzo.txt" "*.txt"
+find . -iname "*.txt"
+
+Search by name in case sensitive way
+------------------------------------------
+find . -maxdepth 2 -iname "*.txt" 
+
+
+find file larger than 100kb
+---------------------------------
+find / -type f -size +100k | wc -l 
+
+has to be file bigger than 100kb and smaller than 5mb
+------------------------------------------------------
+find / -type f -size +100k -o[OR] -size -5M | wc -l
+
+perform another command 
+------------------------
+find / -type f -size +100k -size -5M exec cp {} ~/Desktop \;
+find / -type f -size +100k -size -5M -ok cp {} ~/Desktop \;
+
+make 500 folder
+---------------
+mkdir haystack/folder{1..500}
+
+make fiile in each 100 file in folder
+-------------------------------------
+touch haystack/folder{1..500}/file{1..100}
+
+example:
+------------
+find a file in /haystcak folder named niddle.txt and move to desktop
+find haystack/ -type f -name "niddle.txt" -exec mv {} ~/desktop \;
+
+control Search depth
+---------------------
+find . -maxdepth 1 
+
+find only file or directory
+--------------------------------
+find . -type f [only file] d [directory] -maxdepth 1
+
+find by name
+----------------
+find . -name "5.txt" , "*.txt" 
+ 
+case insesative way
+------------------------
+find . -maxdepth 10 -name  "?.TXT"
+
+find by size 
+----------------
+find / -type f -size +100k
+
+find . -type f -size +1k -size -5M
+find . -type f -size +1k -o -size -5M
+ 
+
+find and execute
+---------------------
+find . -maxdepth 3 -type f -size +100k -exec cp {} ~/Desktop/copy\;
+
+
+
+
