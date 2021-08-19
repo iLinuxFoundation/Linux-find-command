@@ -14,7 +14,7 @@
 
 #### For more please Read the txt file added here
 
-##### Some Example: find by type file and larger than 100kb
+##### Some Example: find by type file and larger than 1kb
 
 > find . -type f -size +1k
 
