@@ -16,11 +16,14 @@
 
 ##### Some Example: find by type file and larger than 1kb
 
-> find . -type f -size +1k
+```diff
+-command: find . -type f -size +1k
+```
 
 ##### Search by name in case insensitive way
-
-> find . -maxdepth 2 -iname "*.txt"
+```diff
+-command: find . -maxdepth 2 -iname "*.txt"
+```
 
 
 
